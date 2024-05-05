@@ -1,0 +1,175 @@
+﻿@* @model CourseModel *@
+@model CourseDetailsViewModel
+@{
+
+    var user = await UserManager.GetUserAsync(User);
+
+}
+<partial name="~/Views/Partials/_PageTitlePartial.cshtml" model="Model.Course!.Title"/>
+    <!-- Course Details Section Start -->
+@if (Model != null)
+{
+    <div class="course-details-section" asp-data="@Model.Course.Id">
+        <div class="course-details">
+            <div class="course-details-heading">
+                <div class="course-d-h">
+                    <div class="course-d-h-buttons">
+                        @if (Model.Course.IsBestSeller)
+                        {
+                            <div class="course-d-h-btn-s">Best Seller</div>
+                        }
+                        @if(Model.Course.Category != null)
+                        {
+                            <div class="course-d-h-btn-d">@Model.Course.Category.CategoryName</div>
+                        }
+                    </div>
+                    <div class="course-d-h-title">
+                        @Model.Course.Title
+                    </div>
+                    <div class="course-d-h-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, quisquam? Maxime.</div>
+                    <div class="course-d-h-history">
+                        <div class="course-d-h-reviews">
+                            <div class="course-d-h-r-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            (@Model.Course.LikesInNumber reviews)
+                        </div>
+                        <div class="course-d-h-likes">
+                            <i class="fa-regular fa-thumbs-up"></i> 5K likes
+                        </div>
+                        <div class="course-d-h-hours">
+                            <i class="fa-regular fa-clock"></i> @Model.Course.Hours hours
+                        </div>
+                    </div>
+                </div>
+                <div class="course-d-author">
+                    <div class="course-d-a-image">
+                        <img src="/images/author.png" alt="" class="course-d-a-img">
+                    </div>
+                    <div class="course-d-a-c">
+                        <div class="course-d-a-title">Created by</div>
+                        <div class="course-d-a-name">@Model.Course.Author</div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-details-description">
+                <div class="course-d-d-heading">
+                    <div class="course-d-d-h-description">
+                        <div class="course-d-d-h-d-desc">
+                            <div class="course-d-d-h-d-desc-title">
+                                Course Description
+                            </div>
+                            <div class="course-d-d-h-d-desc-description">
+                                @Model.Course.Description
+                                </div>
+                        </div>
+                        <div class="course-d-d-h-d-learn">
+                            <div class="course-d-d-h-d-learn-title">
+                                What you'll learn
+                            </div>
+                            <div class="course-d-d-h-d-learn-list">
+                                <ul class="course-d-d-h-d-learn-l">
+                                    @foreach(var item in Model.Course.LearningObjectives)
+                                    {
+                                        <li><i class="fa-regular fa-circle-check"></i>@item.Description</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-d-d-includes">
+                        <div class="course-d-d-i-card">
+                            <div class="course-d-d-i-card-title">
+                                This course includes:
+                            </div>
+                            <div class="course-d-d-i-card-list">
+                                <div class="course-d-d-i-card-desc">
+                                    <i class="fa-solid fa-display"></i>
+                                    @Model.Course.Hours hours on-demand video
+                                </div>
+                                <div class="course-d-d-i-card-desc">
+                                    <i class="fa-regular fa-file-lines"></i>
+                                    18 articels
+                                </div>
+                                <div class="course-d-d-i-card-desc">
+                                    <i class="fa-solid fa-download"></i>
+                                    @Model.Course.DownloadableResources downloadable resources
+                                </div>
+                                <div class="course-d-d-i-card-desc">
+                                    <i class="fa-solid fa-infinity"></i>
+                                    Full lifetime access
+                                </div>
+                                <div class="course-d-d-i-card-desc">
+                                    <i class="fa-solid fa-medal"></i>
+                                    Certificate of completion
+                                </div>
+                            </div>
+                            <div class="course-d-d-i-card-price">
+                                @Model.Course.Price 
+                                @if(Model.Course.DiscountPrice != null)
+                                {
+                                    <div class="course-d-d-i-c-p-discount">@Model.Course.DiscountPrice</div>
+                                } 
+                            </div>
+                            <div class="course-d-d-i-card-btn">
+                                @if (Model.IsEnrollment)
+                                {
+                                    <form method="post" asp-action="LeaveCourse" asp-controller="Courses" asp-route-courseId="@Model.Course.Id">
+                                        <button class="course-d-d-i-c-btn">
+                                            Leave Course
+                                        </button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form method="post" asp-action="JoinCourse" asp-controller="Courses" asp-route-courseId="@Model.Course.Id">
+                                        <button class="course-d-d-i-c-btn">
+                                            Join course
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-d-d-program">
+                    <div class="course-d-d-p-title">
+                        Program Details
+                    </div>
+                    <div class="course-d-d-p-steps">
+                        @foreach(var step in Model.Course.CourseSteps)
+                        {
+                            <div class="course-d-d-p-s-step">
+                                <div class="course-d-d-p-s-s-number">
+                                    <div class="course-d-d-p-s-s-n-circle">
+                                        <div class="course-d-d-p-s-s-n-n">@step.StepNumber</div>
+                                    </div>
+                                </div>
+                                <div class="course-d-d-p-s-s-heading">
+                                    <div class="course-d-d-p-s-s-h-title">
+                                        @step.StepTitle
+                                    </div>
+                                    <div class="course-d-d-p-s-s-h-desc">
+                                        @step.StepDescription
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="course-details-image">
+            <div class="course-d-i">
+                <div class="course-details-effect"></div>
+                <img src="@Model.Course.Image" alt="@Model.Course.Title" class="course-details-img">
+            </div>
+        </div>
+    </div>
+
+}
+<!-- Course Details Section End -->

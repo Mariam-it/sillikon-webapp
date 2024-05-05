@@ -1,0 +1,55 @@
+﻿@{
+    var themeMode = Context.Request.Cookies["ThemeMode"] ?? "light";
+    var isDark = (themeMode == "dark") ? true : false;
+
+    bool isAuthenticated = User.Identity!.IsAuthenticated;
+
+    var user = await UserManager.GetUserAsync(User);
+
+}
+<nav class="navbar">
+    <div class="nav">
+        <a class="logo" asp-action="Index" asp-controller="Home">
+            <img src="~/images/@(isDark ? "dark-mode.svg" : "light-mode.svg")" alt="Silikon Logo">
+        </a>
+        <div class="nav-toggle">&#9776;</div>
+        <div class="menu">
+            <div class="menu-header">
+                <div class="menu-links">
+                    <a href="#!">Overview</a>
+                    <a href="#!">Features</a>
+                    @if (SigInManager.IsSignedIn(User))
+                    {
+                        <a asp-action="Index" asp-controller="Courses">Courses</a>
+                    }
+                    <a asp-action="Index" asp-controller="Contact">Contact</a>
+                </div>
+            </div>
+            <div class="user-controls">
+                <div class="theme-switch">
+                    <span class="theme-switch-light">Light</span>
+                    <label class="switch" for="switch-mode">
+                        <input type="checkbox" id="switch-mode" checked="@isDark">
+                        <div class="circle"></div>
+                    </label>
+                    <span class="theme-switch-dark">Dark</span>
+                </div>
+                @if (!SigInManager.IsSignedIn(User))
+                {
+                    <div class="acount-button">
+                        <a asp-action="SignIn" asp-controller="Auth" class="btn sign-in" type="submit">
+                            Sign in<i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </a>
+                        <a asp-action="SignUp" asp-controller="Auth" class="btn sign-up" type="submit">Sign up<i class="fa-regular fa-user"></i></a>
+                    </div>
+                }
+                @if (SigInManager.IsSignedIn(User))
+                {
+                    <a asp-action="Details" asp-controller="Account" class="user-image">
+                        <img class="user-img" src="~/images/uploads/@user!.ProfileImage" alt="@user.FirstName @user.LastName">
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</nav>

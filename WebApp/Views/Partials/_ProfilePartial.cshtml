@@ -1,0 +1,314 @@
+﻿@model AccountDetailsViewModel
+<!--Profile Start-->
+<div class="profile-section">
+    <div class="account">
+        <div class="profile">
+            <div class="user-profile">
+                <div class="image-profile">
+                    <div class="image-p">
+                        <img src="~/images/uploads/@Model.BasicInfo!.ProfileImage" alt="@Model.BasicInfo!.FirstName">
+                        <form class="icon-image" enctype="multipart/form-data" method="post" asp-action="UploadProfileImage" asp-controller="Account">
+                            <input id="fileUploader" type="file" name="file" hidden />
+                            <label for="fileUploader"><i class="fa-solid fa-rotate"></i></label>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="profile-name">
+                    <div class="name">@Model.BasicInfo.FirstName @Model.BasicInfo.LastName</div>
+                    <div class="profile-email">
+                        <p>@Model.BasicInfo.Email</p>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-menu">
+                <div class="detail">
+                    <div class="account-detail">
+                        <ul class="menu">
+                            <li class="profile-nav active" data-section-id="account-details"><i class="fa-solid fa-gear"></i>Account Details</li>
+                            <li class="profile-nav" data-section-id="security"><i class="fa-solid fa-lock"></i></i>Security</li>
+                            <li class="profile-nav" data-section-id="saved-courses"><i class="fa-regular fa-bookmark"></i>Saved Courses</li>
+                            <a asp-action="SignOut" asp-controller="Auth">
+                            <li class="profile-nav" data-section-id="sign-out"><i class="fas fa-sign-out"></i>Sign Out</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="account-details" class="detail-section account-section">
+            <div class="account-titel">Account Details</div>
+            <div class="profile-info">
+                @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+                {
+                    <div>
+                        @TempData["StatusMessage"]
+                    </div>
+                }
+                <form class="p-i-basic-info" method="post" asp-action="UpdateBasicInfo" asp-controller="Account" novalidate>
+                    <div class="info-titel">Basic Info</div>
+                    <div class="info-section">
+                        <div class="i-s-fullname">
+                            <div class="i-s-fname">
+                                <label asp-for="BasicInfo!.FirstName"></label>
+                                @if (Model.BasicInfo.IsExternalAccount)
+                                {
+                                    <input asp-for="BasicInfo!.FirstName" disabled />
+                                }
+                                else
+                                {
+                                    <input asp-for="BasicInfo!.FirstName" />
+                                }
+
+                                <span asp-validation-for="BasicInfo!.FirstName"></span>
+                            </div>
+                            <div class="i-s-lname">
+                                <label asp-for="BasicInfo!.LastName">Last name</label>
+                                @if (Model.BasicInfo.IsExternalAccount)
+                                {
+                                    <input asp-for="BasicInfo!.LastName" type="text" placeholder="Doe" disabled>
+                                }
+                                else
+                                {
+                                    <input asp-for="BasicInfo!.LastName" type="text" placeholder="Doe">
+                                }
+
+                                <span asp-validation-for="BasicInfo!.LastName"></span>
+                            </div>
+                        </div>
+                        <div class="i-s-contact">
+                            <div class="i-s-c-email">
+                                <label asp-for="BasicInfo!.Email">Email address</label>
+                                @if (Model.BasicInfo.IsExternalAccount)
+                                {
+                                    <input asp-for="BasicInfo!.Email" type="email" placeholder="john.doe@domain.com" disabled>
+                                }
+                                else
+                                {
+                                    <input asp-for="BasicInfo!.Email" type="email" placeholder="john.doe@domain.com">
+                                }
+                                <span asp-validation-for="BasicInfo!.Email"></span>
+                            </div>
+                            <div class="i-s-c-phone">
+                                <label asp-for="BasicInfo!.PhoneNumber">Phone</label>
+                                <input asp-for="BasicInfo!.PhoneNumber" type="text" placeholder="Enter your phone">
+                            </div>
+                        </div>
+                        <div class="b-optional">
+                            <label asp-for="BasicInfo!.Bio"> <span>(optional)</span></label>
+                            <textarea asp-for="BasicInfo!.Bio"></textarea>
+                        </div>
+                    </div>
+                    <div class="buttons-profile">
+                        <div class="cancel-btn">
+                            <button type="reset">Cancel</button>
+                        </div>
+                        <div class="save-btn">
+                            <button type="submit">Save changes</button>
+                        </div>
+                    </div>
+                </form>
+                <form class="p-i-address" method="post" asp-action="UpdateAddressInfo" asp-controller="Account" novalidate>
+                    <div class="address-titel">Address</div>
+                    <div class="address-section">
+                        <label asp-for="AddressInfo!.AddressLine_1"></label>
+                        @if (Model.BasicInfo.IsExternalAccount)
+                        {
+                            <input asp-for="AddressInfo!.AddressLine_1" disabled>
+                        }
+                        else
+                        {
+                            <input asp-for="AddressInfo!.AddressLine_1">
+                        }
+                        <span asp-validation-for="AddressInfo!.AddressLine_1"></span>
+                        <label asp-for="AddressInfo!.AddressLine_2">Address line 2 <span>(optional)</span></label>
+                        @if (Model.BasicInfo.IsExternalAccount)
+                        {
+                            <input asp-for="AddressInfo!.AddressLine_2" disabled>
+                        }
+                        else
+                        {
+                            <input asp-for="AddressInfo!.AddressLine_2">
+                        }
+
+                        <div class="p-i-a-code-city">
+                            <div class="postal">
+                                <label asp-for="AddressInfo!.PostalCode"></label>
+                                @if (Model.BasicInfo.IsExternalAccount)
+                                {
+                                    <input asp-for="AddressInfo!.PostalCode" disabled>
+                                }
+                                else
+                                {
+                                    <input asp-for="AddressInfo!.PostalCode">
+                                }
+                                <span asp-validation-for="AddressInfo!.PostalCode"></span>
+                            </div>
+                            <div class="city">
+                                <label asp-for="AddressInfo!.City"></label>
+                                @if (Model.BasicInfo.IsExternalAccount)
+                                {
+                                    <input asp-for="AddressInfo!.City" disabled>
+                                }
+                                else
+                                {
+                                    <input asp-for="AddressInfo!.City">
+                                }
+                                <span asp-validation-for="AddressInfo!.City"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons-profile">
+                        <div class="cancel-btn">
+                            <button type="reset">Cancel</button>
+                        </div>
+                        <div class="save-btn">
+                            <button type="submit">Save changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="security" class="security-section detail-section">
+            <div class="security">
+                <div class="s-title">Security</div>
+                <div class="s-inputs">
+                    <div class="s-i-title">Password</div>
+                    <form asp-action="ChangePassword" asp-controller="Account" class="s-i-form" novalidate>
+                        <div class="s-i-f-current-p s-i-f">
+                            <label asp-for="ChangePassword!.OldPassword"></label>
+                            @if (Model.BasicInfo.IsExternalAccount)
+                            {
+                                <input asp-for="ChangePassword!.OldPassword" disabled>
+                            }
+                            else
+                            {
+                                <input asp-for="ChangePassword!.OldPassword">
+                            }
+                            <span asp-validation-for="ChangePassword!.OldPassword"></span>
+                        </div>
+                        <div class="s-i-f-new-p s-i-f">
+                            <label asp-for="ChangePassword!.NewPassword"></label>
+                            @if (Model.BasicInfo.IsExternalAccount)
+                            {
+                                <input asp-for="ChangePassword!.NewPassword" disabled>
+                            }
+                            else
+                            {
+                                <input asp-for="ChangePassword!.NewPassword">
+                            }
+                            <span asp-validation-for="ChangePassword!.NewPassword"></span>
+                        </div>
+                        <div class="s-i-f-confirm-p s-i-f">
+                            <label asp-for="ChangePassword!.ConfirmNewPassword"></label>
+                            @if (Model.BasicInfo.IsExternalAccount)
+                            {
+                                <input asp-for="ChangePassword!.ConfirmNewPassword" disabled>
+                            }
+                            else
+                            {
+                                <input asp-for="ChangePassword!.ConfirmNewPassword">
+                            }
+                            <span asp-validation-for="ChangePassword!.ConfirmNewPassword"></span>
+                        </div>
+
+                        <div class="s-i-buttons">
+                            <button class="s-i-b-cancel-btn" type="reset">Cancel</button>
+                            <button type="submit">Change password</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="s-delete-account" id="delete-user-account">
+                    <div class="s-d-a-title">Delete account</div>
+                    <div class="s-d-a-description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo blanditiis, accusantium, fugiat totam eligendi dolores incidunt et aut ipsa ratione vel reprehenderit rerum nam sunt nisi! Velit voluptatum laboriosam vitae, temporibus neque dolor eveniet commodi sequi.
+                    </div>
+                    @if (TempData["StatusMessage"] != null)
+                    {
+                        <div class="s-d-a-status-message">
+                            @TempData["StatusMessage"]
+                        </div>
+                    }
+                    <form id="delete-account-form" asp-action="DeleteAccount" asp-controller="Account" novalidate>
+                        <div class="s-d-a-checkbox">
+                            <input id="delete-account" asp-for="DeleteAccount!.Delete" type="checkbox">
+                            <label asp-for="DeleteAccount!.Delete">I want to delete my account</label>
+                            <span asp-validation-for="DeleteAccount!.Delete"></span>
+                        </div>
+                        <div class="s-d-a-delete-btn">
+                            <button type="button" onclick="confirmDelete()">Delete</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+        <div id="saved-courses" class="detail-section saved-courses-section">
+            <div class="p-a-saved-courses">
+                <div class="p-a-s-heading">
+                    <div class="p-a-s-h-title">Saved items</div>
+                    @if (Model.Course != null && Model.Course.Count > 0)
+                    {
+                        <form asp-action="RemoveAllCourses" asp-controller="Courses">
+                            <button type="submit" class="p-a-s-h-btn"><i class="fa-regular fa-trash-can"></i>Delete all</button>
+                        </form>
+                    }
+
+                </div>
+                <div class="p-saved-course-items">
+                    @if (Model.Course != null)
+                    {
+                        if (Model.Course.Count == 0)
+                        {
+                            <div>No Saved Courses</div>
+                        }
+                        foreach (var course in Model.Course)
+                        {
+                            <div class="course-item">
+                                <a asp-action="Details" asp-controller="Courses" asp-route-id="@course.Id" class="c-item">
+                                    <div class="couese-card">
+                                        <div class="card-img">
+                                            <img class="course-img" src="@course.Image" alt="@course.Title">
+                                        </div>
+                                        <div class="course-content">
+                                            <h3 class="course-title">@course.Title</h3>
+                                            <p class="course-author">By @course.Author</p>
+                                            <div class="course-prices">
+                                                <div class="course-price">@course.Price</div>
+                                                @if (!string.IsNullOrEmpty(course.DiscountPrice))
+                                                {
+                                                    <div class="course-discount">@course.DiscountPrice</div>
+                                                }
+                                            </div>
+                                            <div class="course-time">
+                                                <div class="course-time-icon">
+                                                    <i class="fa-regular fa-clock"></i> @course.Hours hours
+                                                </div>
+                                                <div class="course-likes">
+                                                    <i class="fa-regular fa-thumbs-up"></i> @course.LikesProcent (@course.LikesInNumber)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <form method="post" asp-action="RemoveCourse" asp-controller="Courses" asp-route-courseId="@course.Id">
+                                    <button type="submit" class="course-icon">
+                                        <i class="fa-regular fa-bookmark"></i>
+                                    </button>
+                                </form>
+                                @if (course.IsBestSeller)
+                                {
+                                    <div class="best-seller">Best Seller</div>
+                                }
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Profile End-->
+@await Html.PartialAsync("_AccountValidationScriptPartial");

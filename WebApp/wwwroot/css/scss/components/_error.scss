@@ -1,0 +1,56 @@
+@use '../core' as*;
+
+.error-section {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+
+    .error-heading {
+        .error-image {
+            img {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+
+        .error-titel {
+            font-weight: bold;
+            font-size: 30px;
+            color: var(--gray-900);
+            margin-bottom: 15px;
+        }
+
+        .error-warning {
+            font-size: 15px;
+            color: var(--gray-700);
+            margin-bottom: 15px;
+        }
+    }
+
+    .error-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+
+        a {
+            padding: 10px 20px;
+            color: var(--white);
+            background-color: var(--theme);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.25);
+
+            &:hover {
+                background-color: var(--theme)-secondary;
+                box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.25);
+                color: var(--black);
+            }
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+}

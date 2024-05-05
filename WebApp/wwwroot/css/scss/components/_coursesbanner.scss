@@ -1,0 +1,112 @@
+@use'../core' as *;
+
+.courses-banner-section {
+    display: none;
+
+    @include md {
+        max-width: 768px;
+        margin: 0px auto;
+        width: 100%;
+    }
+
+    @include lg {
+        max-width: 992px;
+    }
+
+    @include xl {
+        max-width: 1200px;
+    }
+
+    @include xxl {
+        max-width: 1400px;
+    }
+
+    .courses-banner {
+        margin: 20px 0;
+        padding: 40px 20px;
+        background-color: var(--gray-100);
+        border-radius: 8px;
+        display: grid;
+        row-gap: 30px;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+            padding: 40px;
+            column-gap: 50px;
+        }
+
+        @include xl {
+            padding: 80px;
+            column-gap: 125px;
+        }
+
+        @include xxl {
+            padding: 110px;
+        }
+
+        .banner-heading {
+            display: grid;
+            row-gap: 10px;
+
+            .banner-span {
+                @include text-m;
+
+                @include lg {
+                    @include text-lg;
+                }
+
+                @include xl {
+                    @include text-xl;
+                }
+
+                @include xxl {
+                    @include text-lead;
+                }
+            }
+
+            .banner-title {
+                @include h1;
+
+                span {
+                    color: var(--theme);
+                }
+            }
+
+            .banner-btn {
+                margin-top: 30px;
+
+                .c-b-btn {
+                    display: inline-block;
+                    background-color: var(--theme);
+                    padding: 15px 30px;
+                    border-radius: 8px;
+
+                    .b-btn {
+                        color: var(--white);
+                        text-decoration: none;
+
+                        @include xl {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .banner-image {
+            justify-self: center;
+
+            @include md {
+                justify-self: end;
+            }
+
+            @include lg {
+                justify-self: center;
+            }
+
+            .banner-img {
+                width: 100%;
+            }
+        }
+    }
+}

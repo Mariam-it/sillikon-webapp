@@ -1,0 +1,114 @@
+@use'../core' as *;
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @include md {
+        max-width: 768px;
+        margin: 0px auto;
+        width: 100%;
+        flex-direction: row-reverse;
+    }
+
+    @include lg {
+        max-width: 992px;
+    }
+
+    @include xl {
+        max-width: 1200px;
+    }
+
+    @include xxl {
+        max-width: 1400px;
+    }
+
+    .mange-text {
+        max-width: 350px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: var(--gray-000);
+
+        @include xl {
+            max-width: 650px;
+        }
+
+        @include xxl {
+            max-width: 800px;
+        }
+
+        .manage-title {
+            color: var(--gray-900);
+            font-size: 26px;
+            font-weight: bold;
+            text-align: start;
+            margin-bottom: 30px;
+
+            @include lg {
+                font-size: 37px;
+            }
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            list-style: none;
+            padding: 0;
+
+            li {
+                color: var(--gray-700);
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                i {
+                    color: var(--theme);
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .manage-btn {
+            display: block;
+            margin-top: 30px;
+            padding: 12px;
+            background-color: var(--theme);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: backround-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--theme-secondary);
+            }
+
+            i {
+                padding: 2px;
+            }
+        }
+    }
+
+    .manage-img {
+        @include md {
+            top: 0;
+            right: 0;
+            width: 50%;
+
+            @include lg {
+                width: 50%;
+            }
+
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+}

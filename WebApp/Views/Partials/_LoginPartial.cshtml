@@ -1,0 +1,48 @@
+﻿@model SignInViewModel
+<!-- Login Start -->
+<div class="login-section">
+    <div class="login">
+        @if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+        {
+            <div>
+                @ViewData["StatusMessage"]
+            </div>
+        }
+        <form motod="post" asp-action="SignIn" asp-controller="Auth" asp-route-ReturnUrl="@ViewData["ReturnUrl"]" class="login-form" novalidate>
+            <div class="l-f-heading">
+                <div class="l-f-h-title">
+                    Welcome Back
+                </div>
+                <div class="l-f-h-signup">
+                    Don't have an account yet? <a asp-action="SignIn" asp-controller="Auth">Sign up here</a>
+                </div>
+            </div>
+            <div class="l-f-inputs">
+                <label class="l-f-i-label" asp-for="Email"></label>
+                <input id="email" asp-for="Email">
+                <span asp-validation-for="Email"></span>
+                <label class="l-f-i-label" asp-for="Password"></label>
+                <input id="passowrd" asp-for="Password">
+                <span asp-validation-for="Password"></span>
+                <div class="login-input">
+                    <input class="login-input-el" type="checkbox" asp-for="IsPresistent">
+                    <label class="l-f-i-r-label" asp-for="IsPresistent">Remember me</label>
+                </div>
+
+            </div>
+            <button class="l-f-btn" type="submit">Sign in</button>
+            <a href="#" class="l-f-forget-btn">Forget your passowrd?</a>
+            <div class="l-f-social-network">
+                <div class="l-f-sn-heading">
+                    Or sign in with your social network
+                </div>
+                <div class="l-f-sn-buttons">
+                    <a asp-action="Google" asp-controller="Auth"><img src="/images/bxl-google.png" alt="">Google</a>
+                    <a asp-action="Facebook" asp-controller="Auth"><img src="/images/bxl-facebook.png" alt="">Facebook</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Login End -->
+@await Html.PartialAsync("_ValidationScriptPartial");

@@ -1,0 +1,25 @@
+﻿@{
+    var themeMode = Context.Request.Cookies["ThemeMode"] ?? "light";
+}
+<!DOCTYPE html>
+<html lang="en" class="@themeMode">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApp</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <partial name="~/Views/Partials/_HeaderPartial.cshtml" model="@ViewData["AccountDetailsViewModel"]" />
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <partial name="~/Views/Partials/_FooterPartial.cshtml" />
+    </div>
+    <script src="https://kit.fontawesome.com/a4e6789cd9.js" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <partial name="_CookieConsent" />
+</body>
+</html>

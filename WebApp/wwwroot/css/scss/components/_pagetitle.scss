@@ -1,0 +1,47 @@
+
+@use '../core' as *;
+
+.page-title-section {
+    @include md {
+        max-width: 768px;
+        margin: 0px auto;
+        width: 100%;
+    }
+
+    @include lg {
+        max-width: 992px;
+    }
+
+    @include xl {
+        max-width: 1200px;
+    }
+
+    @include xxl {
+        max-width: 1400px;
+    }
+
+    .p-title {
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        color: var(--gray-600);
+
+        .page-name {
+            cursor: pointer;
+
+            i {
+                margin-right: 5px;
+            }
+        }
+
+        .page-icon {
+            i {
+            }
+        }
+
+        .sub-page-name {
+            cursor: pointer;
+            color: var(--theme);
+        }
+    }
+}

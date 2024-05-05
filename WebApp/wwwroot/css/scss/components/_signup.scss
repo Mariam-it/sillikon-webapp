@@ -1,0 +1,223 @@
+﻿@use '../core' as *;
+
+.signup-section {
+    .signup {
+        display: grid;
+
+        @include md {
+            max-width: 768px;
+            margin: 0px auto;
+            width: 100%;
+        }
+
+        @include lg {
+            max-width: 992px;
+        }
+
+        @include xl {
+            max-width: 1200px;
+        }
+
+        @include xxl {
+            max-width: 1400px;
+        }
+
+        .signup-form {
+            justify-self: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+            @include md {
+                width: 526px;
+            }
+
+            padding: 20px;
+            display: grid;
+            row-gap: 20px;
+
+            .s-f-heading {
+                display: grid;
+                row-gap: 10px;
+
+                .l-f-h-title {
+                    @include h3;
+
+                    @include xl {
+                        @include h2;
+                    }
+
+                    @include xxl {
+                        @include h1;
+                    }
+                }
+
+                .l-f-h-signup {
+                    @include text-s;
+
+                    a {
+                        text-decoration: none;
+                        color: var(--info);
+                    }
+                }
+            }
+
+            .s-f-inputs {
+                display: grid;
+
+                .s-f-s-fullname {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    column-gap: 20px;
+                    margin-bottom: 20px;
+
+                    .s-f-s-fname {
+                        display: grid;
+
+                        .s-f-i-label {
+                        }
+
+                        #firstname {
+                            padding: 15px;
+                            outline: none;
+                            border: 1px solid var(--gray-400);
+                            border-radius: 8px;
+                        }
+
+                        span {
+                            &.field-validation-error {
+                                color: var(--danger);
+                            }
+                        }
+                    }
+
+                    .s-f-s-lname {
+                        display: grid;
+
+                        .s-f-i-label {
+                        }
+
+                        #lastname {
+                            padding: 15px;
+                            outline: none;
+                            border: 1px solid var(--gray-400);
+                            border-radius: 8px;
+                        }
+
+                        span {
+                            &.field-validation-error {
+                                color: var(--danger);
+                            }
+                        }
+                    }
+                }
+
+                span {
+                    &.field-validation-error {
+                        color: var(--danger);
+                    }
+                }
+
+                .s-f-i-label {
+                    font-family: $font-manrope;
+                    margin-bottom: 5px;
+                    color: var(--gray-900);
+                    font-weight: 700;
+                    line-height: 160%;
+                    margin-top: 20px;
+                }
+
+                #email {
+                    padding: 15px;
+                    outline: none;
+                    border: 1px solid var(--gray-400);
+                    border-radius: 8px;
+                }
+
+                #passowrd {
+                    padding: 15px;
+                    outline: none;
+                    border: 1px solid var(--gray-400);
+                    border-radius: 8px;
+                }
+
+                #confirmpassowrd {
+                    padding: 15px;
+                    outline: none;
+                    border: 1px solid var(--gray-400);
+                    border-radius: 8px;
+                }
+
+                .s-f-i-r-label {
+                    margin-top: 20px;
+                    cursor: pointer;
+                    font-family: $font-manrope;
+
+                    a {
+                        text-decoration: none;
+                        color: var(--info);
+                    }
+                }
+
+                .custom-checkbox {
+                    margin-top: 20px;
+
+                    input[type="checkbox"] {
+                        display: none;
+                    }
+
+                    input[type="checkbox"]:checked + .custom-label::before {
+                        background-color: var(--info);
+                    }
+
+                    input[type="checkbox"]:checked + .custom-label::after {
+                        display: block;
+                    }
+
+                    .custom-label {
+                        position: relative;
+                        padding-left: 25px;
+                        cursor: pointer;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 1px;
+                            width: 17px;
+                            height: 17px;
+                            border: 1px solid var(--gray-400);
+                            border-radius: 3px;
+                        }
+
+                        &::after {
+                            content: '✔';
+                            position: absolute;
+                            left: 4px;
+                            top: 53%;
+                            transform: translateY(-50%);
+                            color: var(--white);
+                            font-size: 1rem;
+                        }
+
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            .s-f-btn {
+                font-family: $font-manrope;
+                text-decoration: none;
+                color: var(--white);
+                line-height: 160%;
+                background-color: var(--theme);
+                padding: 10px;
+                text-align: center;
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

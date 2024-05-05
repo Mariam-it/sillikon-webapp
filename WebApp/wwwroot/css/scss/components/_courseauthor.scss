@@ -1,0 +1,194 @@
+@use '../core' as *;
+
+.course-author-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include lg {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    @include xxl {
+        margin-top: 112px;
+        margin-bottom: 112px;
+    }
+
+    .course-author {
+        display: grid;
+
+        @include md {
+            max-width: 768px;
+            margin: 0px auto;
+            width: 100%;
+        }
+
+        @include lg {
+            max-width: 992px;
+            grid-template-columns: auto auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        @include xl {
+            max-width: 1200px;
+        }
+
+        @include xxl {
+            max-width: 1400px;
+        }
+
+        .c-a-image {
+            justify-self: center;
+
+            @include lg {
+                margin-left: 20px;
+            }
+
+            .c-a-img {
+
+                .a-img {
+                    width: 100%;
+                    object-fit: cover;
+
+                    @include lg {
+                        border-radius: 8px 0 0 8px;
+                    }
+                }
+            }
+        }
+
+        .c-a-content {
+            position: relative;
+            background-color: var(--gray-900);
+            padding: 60px 40px;
+            justify-self: center;
+            overflow: hidden;
+
+            @include lg {
+                max-height: 351px;
+                border-radius: 0 8px 8px 0;
+                margin-right: 20px;
+            }
+
+            @include xl {
+                max-height: 399px;
+                padding: 60px 100px;
+            }
+
+            @include xxl {
+                max-height: 376px;
+                padding: 96px 134px;
+            }
+
+            .c-a-c {
+                z-index: 2;
+                display: grid;
+                row-gap: 10px;
+
+                .c-a-c-span {
+                    @include text-s;
+
+                    @include lg {
+                        @include text-m;
+                    }
+
+                    @include xl {
+                        @include text-xl;
+                    }
+                }
+
+                .c-a-c-title {
+                    @include h3;
+
+                    @include xl {
+                        @include h2;
+                        color: var(--white);
+                    }
+
+                    @include xxl {
+                        @include h1;
+                        color: var(--white);
+                    }
+
+                    color: var(--white);
+                    margin-bottom: 10px;
+                }
+
+                .c-a-c-description {
+                    margin-bottom: 10px;
+                    @include text-s;
+
+                    @include xl {
+                        @include text-m;
+                    }
+                }
+
+                .c-a-c-buttons {
+                    display: flex;
+                    gap: 20px;
+
+                    @include lg {
+                        margin-top: 30px;
+                    }
+
+                    @include xxl {
+                        margin-top: 40px;
+                    }
+
+                    .c-a-c-b-subsc {
+                        display: inline-block;
+                        text-decoration: none;
+                        color: var(--white);
+                        background-color: var(--danger);
+                        padding: 10px 20px;
+                        border-radius: 5px;
+
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .c-a-c-b-follo {
+                        display: inline-block;
+                        text-decoration: none;
+                        color: var(--white);
+                        background-color: var(--info);
+                        padding: 10px 20px;
+                        border-radius: 5px;
+
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            .course-bg-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                .c-bg-img {
+                    width: 250%;
+
+                    @include md {
+                        width: 100%;
+                    }
+
+                    @include lg {
+                        width: 200%;
+                    }
+
+                    @include xl {
+                        width: 190%;
+                    }
+
+                    @include xxl {
+                        width: 150%;
+                    }
+                }
+            }
+        }
+    }
+}

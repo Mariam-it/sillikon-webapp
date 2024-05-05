@@ -1,0 +1,177 @@
+@use'../core' as *;
+
+.switch-section {
+    background-image: linear-gradient(to right, var(--black) 50%, var(--white) 50%);
+    position: relative;
+    padding-top: 50px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: var(--theme);
+        width: 1.5px;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .switch {
+        position: relative;
+        height: 60vw;
+
+        @include md {
+            max-width: 768px;
+            margin: 0px auto;
+            width: 100%;
+        }
+
+        @include lg {
+            max-width: 992px;
+            height: 650px;
+        }
+
+        @include xl {
+            max-width: 1200px;
+            height: 770px;
+        }
+
+        @include xxl {
+            max-width: 1400px;
+            height: 900px;
+        }
+
+        .switch-heading {
+            display: flex;
+            justify-content: center;
+
+            .switch-title-left {
+                display: inline-block;
+                color: var(--white);
+                font-weight: bold;
+                position: absolute;
+                font-size: 20px;
+                right: 50.5%;
+                top: -5%;
+
+                @include md {
+                    top: 0;
+                    font-size: 24px;
+                }
+
+                @include lg {
+                    font-size: 32px;
+                }
+
+                @include xl {
+                    font-size: 46px;
+                }
+            }
+
+            .switch-title-right {
+                display: inline-block;
+                color: var(--black);
+                font-weight: bold;
+                position: absolute;
+                font-size: 20px;
+                left: 50.5%;
+                top: -5%;
+
+                @include md {
+                    top: 0;
+                    font-size: 24px;
+                }
+
+                @include lg {
+                    font-size: 32px;
+                }
+
+                @include xl {
+                    font-size: 46px;
+                }
+            }
+        }
+
+        .switch-content {
+            display: grid;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            .s-content {
+                position: relative;
+
+                .switch-images {
+                    .switch-img {
+                        .s-img {
+                            width: 100%;
+                        }
+
+                        .img-d {
+                            width: 80%;
+                            position: absolute;
+                            left: 50%;
+                            top: 15%;
+                            transform: translate(-50%);
+                        }
+                    }
+
+                    .switch-icon {
+                        z-index: 9999;
+                        position: absolute;
+                        left: 50%;
+                        top: 51%;
+                        transform: translate(-50%, -50%);
+
+                        .s-icon {
+                            display: grid;
+                            color: var(--white);
+                            background-color: var(--theme);
+                            width: 10px;
+                            aspect-ratio: 1/1;
+                            padding: 3px;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            @include md {
+                                width: 16px;
+                            }
+
+                            @include lg {
+                                width: 20px;
+                            }
+
+                            @include xl {
+                                width: 24px;
+                            }
+
+                            @include xxl {
+                                width: 30px;
+                            }
+
+                            .fa-solid {
+                                align-self: center;
+                                justify-self: center;
+                                font-size: 7px;
+
+                                @include md {
+                                    font-size: 9px;
+                                }
+
+                                @include lg {
+                                    font-size: 12px;
+                                }
+
+                                @include xl {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

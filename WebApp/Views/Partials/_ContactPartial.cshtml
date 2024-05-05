@@ -1,0 +1,60 @@
+﻿@model ContactViewModel
+    <!--Contac Start-->
+<div class="contact-section">
+    <div class="contact-heading">
+        <div class="contact-information">
+            <div class="contact-titel">Contact Us</div>
+            <div class="contact-info">
+                <div class="contact-i-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="contact-i-description">
+                    <div class="contact-i-text">Email us</div>
+                    <div class="description-i-text">Please feel free to drop us a line. We will respond as soon as possible.</div>
+                    <div class="contact-i-btn">
+                        <a href="mailto:info@example.com">Leave a message<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-i-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <div class="contact-i-description">
+                    <div class="contact-i-text">Careers</div>
+                    <div class="description-i-text">Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</div>
+                    <div class="contact-i-btn">
+                        <a href="careers.html">Send an application<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="form-titel">Get In Contact With Us</div>
+            <div class="form-apply">
+                <form method="post" asp-action="Contact" asp-controller="Contact" class="con-form" novalidate>
+                    <label class="s-f-i-label" asp-for="Name"></label>
+                    <input asp-for="Name">
+                    <span asp-validation-for="Name"></span>
+                    <label class="s-f-i-label" asp-for="Email"></label>
+                    <input asp-for="Email">
+                    <span asp-validation-for="Email"></span>
+                    <span>Service (optional)</span>
+                    <select>
+                        <option value="">Choose the service you are interested in</option>
+                    </select>
+                    <label class="s-f-i-label" asp-for="Message"></label>
+                    <textarea asp-for="Message"></textarea>
+                    <span asp-validation-for="Message"></span>
+                    <div class="contact-f-btn">
+                        <button type="submit">Send Contact Request</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="map-section">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130265.83887408681!2d17.817248623365533!3d59.32621310820164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1ssv!2sse!4v1712821111556!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<!--Contac End-->
+@await Html.PartialAsync("_ValidationScriptPartial");

@@ -1,0 +1,254 @@
+@use '../core' as *;
+
+.tool-section {
+    background-color: var(--gray-100);
+
+    .tool {
+        @include md {
+            max-width: 768px;
+            margin: 0px auto;
+            width: 100%;
+        }
+
+        @include lg {
+            max-width: 992px;
+        }
+
+        @include xl {
+            max-width: 1200px;
+        }
+
+        @include xxl {
+            max-width: 1400px;
+        }
+
+        display: grid;
+        justify-content: center;
+        row-gap: 30px;
+        padding: 30px auto;
+
+        @include md {
+            padding: 40px auto;
+        }
+
+        @include lg {
+            padding: 50px auto;
+            row-gap: 40px;
+        }
+
+        @include xl {
+            padding: 60px auto;
+            row-gap: 50px;
+        }
+
+        @include xxl {
+            padding: 80px auto;
+            row-gap: 60px;
+        }
+
+        .tool-heading {
+            margin-top: 50px;
+            text-align: center;
+            max-width: 460px;
+            justify-self: center;
+
+            @include lg {
+                max-width: 520px;
+            }
+
+            @include xl {
+                max-width: 636px;
+            }
+
+            .tool-title {
+                @include h3;
+                margin-bottom: 10px;
+                display: inline-block;
+
+                @include lg {
+                    @include h2;
+                }
+
+                @include xl {
+                    @include h1;
+                }
+            }
+
+            .tool-description {
+                @include text-s;
+                @include standard-text;
+                color: var(--gray-600);
+
+                @include md {
+                    @include text-m;
+                    color: var(--gray-600);
+                }
+
+                @include lg {
+                    @include text-lg;
+                    color: var(--gray-600);
+                }
+
+                @include xl {
+                    @include text-xl;
+                    color: var(--gray-600);
+                }
+            }
+        }
+
+        .tool-items {
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: auto auto;
+
+            @include lg {
+                grid-template-columns: auto auto auto;
+            }
+
+            .tool-item {
+                text-align: center;
+                position: relative;
+                padding: 10px;
+                max-width: 432px;
+                max-height: 268px;
+                cursor: pointer;
+
+                @include md {
+                    padding: 15;
+                }
+
+                @include lg {
+                    padding: 20px;
+                }
+
+                @include xl {
+                    padding: 30px;
+                }
+
+                @include xxl {
+                    padding: 40px;
+                }
+
+                &:hover {
+                    background-color: var(--gray-000);
+                }
+
+                .tool-icon {
+                    .t-icon {
+                        width: 20px;
+                        aspect-ratio: 1/1;
+                        padding: 5px;
+                        border-radius: 4px;
+
+                        @include md {
+                            width: 25px;
+                            padding: 10px;
+                        }
+
+                        @include lg {
+                            width: 30px;
+                        }
+
+                        @include xl {
+                            width: 37px;
+                            padding: 12px;
+                        }
+
+                        @include xxl {
+                            width: 42px;
+                            padding: 15px;
+                        }
+                    }
+                }
+
+                .item-title {
+                    @include h6;
+
+                    @include md {
+                        margin: 10px 5px;
+                    }
+
+                    @include lg {
+                        margin: 14px 0 7px 0;
+                    }
+
+                    @include xl {
+                        @include h5;
+                        margin: 18px 0 9px 0;
+                    }
+
+                    @include xxl {
+                        margin: 24px 0 12px 0;
+                    }
+                }
+
+                .item-description {
+                    @include text-s;
+                    padding: 6px;
+
+                    @include md {
+                        @include text-m;
+                    }
+
+                    @include xl {
+                        @include text-lg;
+                    }
+                }
+            }
+
+            .tool-item:nth-child(odd)::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0px;
+                height: 100%;
+                width: 1px;
+                background-color: var(--gray-300);
+            }
+
+            .tool-item:nth-child(n+3)::before {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: var(--gray-300);
+            }
+
+            @include lg {
+                .tool-item:nth-child(odd)::after {
+                    @include lg {
+                        content: none;
+                    }
+                }
+
+                .tool-item:nth-child(n+3)::before {
+                    @include lg {
+                        content: none;
+                    }
+                }
+
+                .tool-item:not(:nth-child(3n)):not(:last-child)::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: 1px;
+                    background-color: var(--gray-300);
+                }
+
+                .tool-item:nth-child(n+4)::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--gray-300);
+                }
+            }
+        }
+    }
+}

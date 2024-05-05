@@ -1,0 +1,150 @@
+@use '../core' as *;
+
+.work-tool-section {
+
+    .work-tool {
+        @include md {
+            max-width: 768px;
+            margin: 0px auto;
+            width: 100%;
+        }
+
+        @include lg {
+            max-width: 992px;
+        }
+
+        @include xl {
+            max-width: 1200px;
+        }
+
+        @include xxl {
+            max-width: 1400px;
+        }
+
+        display: grid;
+        justify-content: center;
+        row-gap: 30px;
+        padding: 30px auto;
+
+        @include lg {
+            padding: 50px auto;
+            row-gap: 40px;
+        }
+
+        @include xl {
+            padding: 60px auto;
+            row-gap: 50px;
+        }
+
+        @include xxl {
+            padding: 80px auto;
+            row-gap: 60px;
+        }
+
+        .work-tool-heading {
+            margin-top: 50px;
+            text-align: center;
+            justify-self: center;
+
+            .work-titel {
+                @include h3;
+                margin-bottom: 10px;
+                display: inline-block;
+
+                @include lg {
+                    @include h2;
+                    color: var(--gray-900);
+                }
+
+                @include xl {
+                    @include h2;
+                    color: var(--gray-900);
+                }
+
+                @include xxl {
+                    @include h1;
+                }
+            }
+
+            .work-description {
+                @include text-s;
+                @include standard-text;
+                color: var(--gray-600);
+
+                @include xl {
+                    @include text-xs;
+                }
+
+                @include xxl {
+                    @include text-lg;
+                }
+            }
+        }
+
+        .work-tool-items {
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+
+            @include lg {
+                grid-template-columns: auto auto auto auto;
+            }
+
+            .work-tool-item {
+                display: grid;
+                position: relative;
+                padding: 5px;
+                max-height: 700px;
+                cursor: pointer;
+
+                @include lg {
+                    padding: 0 20px;
+                }
+
+                &:hover {
+                    background-color: var(--gray-100);
+                    border-radius: 4px;
+                    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+                }
+
+                .work-icon {
+                    justify-self: center;
+                    margin-bottom: 20px;
+
+                    .t-icon {
+                        width: 30px;
+                        aspect-ratio: 1/1;
+                        padding: 5px;
+                        border-radius: 4px;
+
+                        @include xl {
+                            width: 40px
+                        }
+
+                        @include xxl {
+                            width: 56px
+                        }
+                    }
+                }
+
+                .work-tool-description {
+                    @include text-s;
+                    color: var(--gray-700);
+                    font-size: 10px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+
+                    @include lg {
+                        padding: 30px 20px 30px 20px;
+                        row-gap: 40px;
+                    }
+
+                    @include xxl {
+                        @include text-lg;
+                    }
+                }
+            }
+        }
+    }
+}

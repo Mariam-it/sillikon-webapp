@@ -1,0 +1,9 @@
+@use 'core';
+@use 'layout';
+@use 'components';
+
+body {
+    background-color: var(--gray-000) !important;
+    margin: 0;
+    padding: 0;
+}

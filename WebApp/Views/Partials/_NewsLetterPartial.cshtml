@@ -1,0 +1,72 @@
+﻿@model SubscribeViewModel
+<div id="subscribe" class="newsletter-section">
+    <div class="newsletter-items">
+        <div class="news-heading">
+            <div class="news-titel">Don't Want to Miss Anything?</div>
+            <div class="news-icon"><img src="~/images/Icon.png" alt="icon"></div>
+        </div>
+        <form method="post" asp-action="Subscribe" asp-controller="Home">
+            <div class="news-boxes">
+                <div class="news-b-text">Sign up for Newsletters</div>
+                <div class="news-c-boxes">
+                    <div class="news-input">
+                        <input asp-for="DailNewsletter" type="checkbox">
+                        <label asp-for="DailNewsletter">
+                            Daily Newsletter
+                        </label>
+                    </div>
+                    <div class="news-input">
+                        <input asp-for="EventUpdates" type="checkbox">
+                        <label asp-for="EventUpdates">
+                            Event Updates
+                        </label>
+                    </div>
+                    <div class="news-input">
+                        <input asp-for="AdvertisingUpdate" type="checkbox">
+                        <label asp-for="AdvertisingUpdate">
+                            Advertising Updates
+                        </label>
+                    </div>
+                    <div class="news-input">
+                        <input asp-for="StartupWeekly" type="checkbox">
+                        <label asp-for="StartupWeekly">
+                            Startups Weekly
+                        </label>
+                    </div>
+                    <div class="news-input">
+                        <input asp-for="WeekingReview" type="checkbox">
+                        <label asp-for="WeekingReview">
+                            Week in Review
+                        </label>
+                    </div>
+                    <div class="news-input">
+                        <input asp-for="Podcasts" type="checkbox">
+                        <label asp-for="Podcasts">
+                            Podcasts
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="news-subscribe">
+                <span asp-validation-for="Email"></span>
+                <div class="news-s-input">
+                    <div class="input-wrapper">
+                        <input asp-for="Email" type="email" placeholder="Your Email" required>
+                        <span class="email-icon"><i class="fa-regular fa-envelope"></i></span>
+                    </div>
+                    <button type="submit">Subscribe</button>
+                </div>
+                @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
+                {
+                    <span>@TempData["StatusMessage"]</span>
+                }
+                else
+                {
+                    <p><span class="asterisk">*</span> Yes, I agree to the <a href="">terms</a> and <a href="">privacy policy</a>.</p>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+@await Html.PartialAsync("_ValidationScriptPartial");

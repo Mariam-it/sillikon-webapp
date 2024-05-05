@@ -1,0 +1,155 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApp
+build_property.RootNamespace = WebApp
+build_property.ProjectDir = C:\Users\moust\OneDrive\Desktop\WINN23\Asp.net\sililikon-webapp\sillikon-webb-app\WebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\moust\OneDrive\Desktop\WINN23\Asp.net\sililikon-webapp\sillikon-webb-app\WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Account/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Auth/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Auth/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Courses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Courses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Error/Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_AppsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0FwcHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_ContactPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvbnRhY3RQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_CourseAuthorPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvdXJzZUF1dGhvclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_CourseDetailsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvdXJzZURldGFpbHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_CoursesBannerPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvdXJzZXNCYW5uZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_CoursesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0NvdXJzZXNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_ErrorPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0Vycm9yUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_FooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0Zvb3RlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_HeaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0hlYWRlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX0xvZ2luUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_ManagePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX01hbmFnZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_NewsLetterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX05ld3NMZXR0ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_PageTitlePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1BhZ2VUaXRsZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_ProfilePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Byb2ZpbGVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_ShowCasePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Nob3dDYXNlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_SignupPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1NpZ251cFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_SwitchPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1N3aXRjaFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_ToolPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1Rvb2xQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Partials/_WorkToolPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcX1dvcmtUb29sUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Shared/_AccountValidationScriptPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BY2NvdW50VmFsaWRhdGlvblNjcmlwdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Shared/_CookieConsent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db29raWVDb25zZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Shared/_Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FcnJvcjQwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Shared/_ValidationScriptPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/moust/OneDrive/Desktop/WINN23/Asp.net/sililikon-webapp/sillikon-webb-app/WebApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7882z672yd

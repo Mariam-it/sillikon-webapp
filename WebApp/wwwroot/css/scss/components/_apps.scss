@@ -1,0 +1,172 @@
+@use '../core' as *;
+
+.apps-section {
+    background-color: var(--gray-100);
+
+    .apps-container {
+        background-color: var(--gray-200);
+        padding-bottom: 50px;
+        display: grid;
+
+        @include md {
+            max-width: 768px;
+            margin: 0px auto;
+            width: 100%;
+        }
+
+        @include lg {
+            padding-top: 50px;
+            max-width: 992px;
+            display: flex;
+            justify-content: center;
+            gap: 10vw;
+        }
+
+        @include xl {
+            max-width: 1200px;
+        }
+
+        @include xxl {
+            max-width: 1400px;
+        }
+
+        .apps-heading {
+            @include lg {
+                order: 1;
+                padding: 0;
+            }
+
+            padding: 50px;
+            display: grid;
+            row-gap: 20px;
+            max-width: 499px;
+            justify-self: center;
+
+            .apps-title {
+                font-weight: bold;
+                font-size: 26px;
+                color: var(--gray-900);
+
+                @include lg {
+                    font-size: 42px;
+                }
+
+                @include xxl {
+                    font-size: 56px;
+                }
+            }
+
+            .apps-h-items {
+                display: grid;
+                row-gap: 20px;
+
+                .apps-h-item {
+                    .apps-content {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto auto;
+                        row-gap: 10px;
+
+                        .apps-h-span {
+                            grid-row: 1;
+                            display: grid;
+                            row-gap: 5px;
+
+                            .apps-span {
+                                color: var(--gray-600);
+                            }
+
+                            .apps-stars {
+                                color: var(--warning);
+
+                                i {
+                                }
+                            }
+                        }
+
+                        .apps-h-texts {
+                            grid-row: 2;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            padding: 5px 0;
+
+                            .apps-h-text {
+                                font-weight: bold;
+                                color: var(--gray-900);
+                                font-size: 18px;
+
+                                @include xl {
+                                    font-size: 24px;
+                                }
+                            }
+
+                            .apps-h-desc {
+                                color: var(--gray-700);
+                                font-size: 11px;
+
+                                @include xl {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+
+                        .apps-btn {
+                            background-color: var(--black);
+                            grid-row: 2;
+                            display: flex;
+                            align-items: center;
+                            width: 150px;
+                            padding: 10px 15px;
+                            border-radius: 15px;
+                            column-gap: 10px;
+                            cursor: pointer;
+
+                            @include xl {
+                                padding: 10px 30px;
+                            }
+
+                            .apps-b-icon {
+                                display: grid;
+                                color: var(--white);
+
+                                i {
+                                }
+
+                                img {
+                                    color: var(--white);
+                                    width: 36px;
+                                    align-self: center;
+                                }
+                            }
+
+                            .apps-b-texts {
+                                color: var(--white);
+
+                                .apps-b-text {
+                                    font-size: 12px;
+                                }
+
+                                .apps-b-title {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .apps-images {
+            @include lg {
+                order: -1;
+            }
+
+            display: grid;
+
+            .iphone {
+                justify-self: center;
+            }
+        }
+    }
+}
